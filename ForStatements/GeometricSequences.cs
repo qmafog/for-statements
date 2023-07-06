@@ -4,26 +4,80 @@
     {
         public static ulong GetGeometricSequenceTermsProduct(uint a, uint r, uint n)
         {
-            // TODO Task 11. Implement the method that returns the product of geometric sequence terms.
-            throw new NotImplementedException();
+            ulong prod = 1;
+            for (uint i = 0; i < n; i++)
+            {
+                prod *= a;
+                for (uint j = 0; j < i; j++)
+                {
+                    prod *= r;
+                }
+            }
+
+            return prod;
         }
 
         public static ulong SumGeometricSequenceTerms(uint n)
         {
-            // TODO Task 12. Implement the method that returns sum of a geometric sequence terms when the first term is 5 and the common ratio is 3.
-            throw new NotImplementedException();
+            ulong sum = 0, elem;
+            for (uint i = 0; i < n; i++)
+            {
+                elem = 5;
+                for (uint j = 0; j < i; j++)
+                {
+                    elem *= 3;
+                }
+
+                sum += elem;
+            }
+
+            return sum;
         }
 
         public static ulong CountGeometricSequenceTerms1(uint a, uint r, uint maxTerm)
         {
-            // TODO Task 13. Implement the method that counts terms in a geometric sequence that are less than or equal to the maxTerm.
-            throw new NotImplementedException();
+            uint elem = 1;
+            ulong counter = 0;
+            for (uint i = 0; ; i++)
+            {
+                elem = a;
+                for (uint j = 0; j < i; j++)
+                {
+                    elem *= r;
+                }
+
+                if (elem <= maxTerm)
+                {
+                    counter++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return counter;
         }
 
         public static ulong CountGeometricSequenceTerms2(uint a, uint r, uint n, uint minTerm)
         {
-            // TODO Task 14. Implement the method that counts terms in a geometric sequence that are greater than or equal to a minTerm.
-            throw new NotImplementedException();
+            uint elem = 1;
+            ulong counter = 0;
+            for (uint i = 0; i < n; i++)
+            {
+                elem = a;
+                for (uint j = 0; j < i; j++)
+                {
+                    elem *= r;
+                }
+
+                if (elem >= minTerm)
+                {
+                    counter++;
+                }
+            }
+
+            return counter;
         }
     }
 }

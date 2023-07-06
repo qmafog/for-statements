@@ -4,14 +4,26 @@
     {
         public static int GetFactorial(int n)
         {
-            // TODO Task 4. Implement the method that returns the factorial of the number n! using the for statement.
-            throw new NotImplementedException();
+            int fact = 1;
+            for (int i = n; i > 0; i--)
+            {
+                fact *= i;
+            }
+
+            return fact;
         }
 
         public static int SumFactorialDigits(int n)
         {
-            // TODO Task 5. Implement the method that calculates the factorial of the number n! and returns the sum of its digits using the for statement.
-            throw new NotImplementedException();
+            int product = GetFactorial(n);
+            int sum = 0;
+
+            for (; product > 0; product /= 10)
+            {
+                sum += product % 10;
+            }
+
+            return sum;
         }
     }
 }

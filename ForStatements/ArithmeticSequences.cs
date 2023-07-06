@@ -23,7 +23,6 @@
             }
 
             return sum;
-
         }
 
         public static int SumArithmeticSequenceTerms3(int a, int n)
